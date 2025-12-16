@@ -28,7 +28,8 @@ public class ThreadTime {
     	while(true) {
 	      try {
 	        Thread.sleep(delai);
-	        System.out.println("-");
+	        DateFormat df = new SimpleDateFormat("HH:mm:ss");
+	        System.out.println(df.format(new Date()));
 	      } catch (InterruptedException e) {
 	        e.printStackTrace();
 	      }
