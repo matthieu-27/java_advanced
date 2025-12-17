@@ -6,20 +6,30 @@ skinparam usecase {
   FontSize 13
 }
 
+' Acteurs
+actor "Admin Système" as Admin
 actor "Conseiller Bancaire" as Advisor
 
-rectangle GestionBancaire {
-  Advisor -- (Créer un compte)
-  Advisor -- (Consulter un compte)
-  Advisor -- (Effectuer un dépôt)
-  Advisor -- (Effectuer un retrait)
-  Advisor -- (Effectuer un virement)
-  Advisor -- (Consulter l'historique des opérations)
-  Advisor -- (Modifier le plafond d'un compte)
+' Relation d'héritage entre acteurs
+Admin <|-right- Advisor
+
+' Cas d'utilisation dans le système bancaire
+rectangle BankApp {
+  Admin -- (Créer un compte)
+  Admin -- (Consulter un compte)
+  Admin -- (Effectuer un dépôt)
+  Admin -- (Effectuer un retrait)
+  Admin -- (Effectuer un virement)
+  Admin -- (Consulter l'historique des opérations)
+  Admin -- (Modifier le plafond d'un compte)
+  Admin -- (Supprimer un compte)
+
+  Advisor -right-> (Se connecter) : <<extends>>
 }
 
+' Notes explicatives
 note right of (Consulter un compte)
-  **Inclut** : Afficher le solde et les informations du titulaire
+  **Inclut** : Afficher le solde et les informations du titulaire.
 end note
 
 note right of (Effectuer un virement)
@@ -33,5 +43,16 @@ end note
 
 note right of (Modifier le plafond d'un compte)
   **Bonus** : Uniquement pour les comptes avec plafond.
+end note
+
+note top of Advisor
+  Héritage : Un conseiller bancaire
+  est un utilisateur spécialisé
+  avec des droits limités.
+end note
+
+note right of Admin
+  **Admin Système** : Accès à toutes les fonctionnalités
+  sans restriction.
 end note
 @enduml
