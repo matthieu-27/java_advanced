@@ -23,7 +23,7 @@ rectangle BankApp {
   Admin -- (Consulter l'historique des opérations)
   Admin -- (Modifier le plafond d'un compte)
   Admin -- (Supprimer un compte)
-
+  Admin -right-> (Se connecter) : <<extends>>
   Advisor -right-> (Se connecter) : <<extends>>
 }
 
