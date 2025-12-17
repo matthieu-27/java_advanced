@@ -1,8 +1,8 @@
 ****** Commande numéro 1 ******
 
 BOEUF
-AUCUN
-TARTE MAISON
+RIZ
 
-Total: 20,00 €
-Le montant total de la commande est de 20.0€
+EAU GAZEUSE
+Total: 19,50 €
+Le montant total de la commande est de 19.5€

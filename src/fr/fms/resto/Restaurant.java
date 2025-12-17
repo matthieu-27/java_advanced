@@ -84,10 +84,12 @@ public class Restaurant {
 	                System.out.println("Choix " + category.getKey() + ":");
 	                category.getValue().forEach((key, item) -> System.out.print("[" + key + ": " + item + "] "));
 	                System.out.println();
+	                
 	                int userChoice = askUserChoice(userScan, category.getValue().size()-1);
 	                Item selectedItem = category.getValue().get(userChoice);
 	                userOrders.put(category.getKey(), selectedItem);
 	                orderPrice += selectedItem.getPrice();
+	                
 	                String key = category.getKey();
 	                switch (key) {
 	                	case "entrée":			lines[1] = isWanted(selectedItem) ? selectedItem.getName() : "";
