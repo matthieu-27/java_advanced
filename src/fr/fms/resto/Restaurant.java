@@ -1,13 +1,12 @@
 package fr.fms.resto;
 
 
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -60,6 +59,7 @@ public class Restaurant {
 		categories.put("dessert", dessert);
 		
 		
+		
 		// variable initialization
 		Scanner userScan = new Scanner(System.in);
         Map<String, String> userOrders = new HashMap<>();
@@ -67,14 +67,15 @@ public class Restaurant {
         System.out.println("Bonjour, combien de menus souhaitez-vous ?");
         int numberOfOrders = askUserChoice(userScan);
         try {
-        	
-        	var path = Path.of("C:\\Users\\CoudercM\\OneDrive\\OneDrive - Facylities Multi Services\\home\\workspace\\java_advanced\\Advanced\\output.txt");
-        	List<String> outputStrs = new ArrayList<String>();
+        	String path = System.getProperty("user.dir");
+        	Path dir = Path.of(path + "\\src\\fr\\fms\\resto\\output.txt");
+        	List<String> orders = new ArrayList<String>();
+
 	        for (int order = 0; order < numberOfOrders; order++) {
-	        	String menuChoice = "Menu " + (order + 1) + ":";
-	        	
-	            System.out.println(menuChoice);
-	            outputStrs.add(menuChoice);
+	        	String[] lines = new String[6];
+	            System.out.println("Menu " + (order + 1) + ":");
+	            
+	            lines[0] = "****** Commande numéro " + (order + 1) + " ******";
 
 	            for (Map.Entry<String, Map<Integer, String>> category : categories.entrySet()) {
 	                System.out.println("Choix " + category.getKey() + ":");
@@ -82,13 +83,29 @@ public class Restaurant {
 	                System.out.println();
 	                int userChoice = askUserChoice(userScan, category.getValue().size()-1);
 	                userOrders.put(category.getKey(), category.getValue().get(userChoice));
+	                String key = category.getKey();
+	                switch (key) {
+	                	case "entrée":			lines[1] = category.getValue().get(userChoice);
+	                				   			break;
+	                	case "plat":			lines[2] = category.getValue().get(userChoice);
+     				   				   			break;
+	                	case "accompagnement":	lines[3] = category.getValue().get(userChoice);
+		   				   			   			break;
+	                	case "dessert":			lines[4] = category.getValue().get(userChoice);
+		   				   			   			break;
+	                	case "boisson":			lines[5] = category.getValue().get(userChoice);
+		   				   			   			break;
+	                	default: 				break;
+	                	
+	                }
 	            }
-	            String orderStr = "Récapitulatif de la commande : " + userOrders;
-	            System.out.println(orderStr);
-	            outputStrs.add(orderStr);
-	            Files.write(path, outputStrs);
+	            for (String line : lines) {
+					orders.add(line);
+				}
+	            System.out.println("Récapitulatif de la commande : " + userOrders);
 	        }
                         
+            Files.write(dir, orders);
 
     	} catch(FileNotFoundException e) {
     		e.printStackTrace();

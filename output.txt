@@ -1,6 +1,2 @@
 Menu 1:
-Récapitulatif de la commande : {boisson=EAU PLATE, dessert=MOUSSE AU CHOCOLAT, plat=POISSON, entrée=AUCUNE, accompagnement=RIZ}
-Menu 2:
-Récapitulatif de la commande : {boisson=EAU GAZEUSE, dessert=TIRAMISU, plat=VEGAN, entrée=QUICHE, accompagnement=LEGUMES}
-Menu 3:
-Récapitulatif de la commande : {boisson=SODA, dessert=MOUSSE AU CHOCOLAT, plat=POULET, entrée=QUICHE, accompagnement=FRITES}
+Récapitulatif de la commande : {boisson=EAU PLATE, dessert=MOUSSE AU CHOCOLAT, plat=POISSON, entrée=AUCUNE, accompagnement=AUCUN}
