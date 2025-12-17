@@ -1,0 +1,37 @@
+@startuml
+left to right direction
+skinparam usecase {
+  BackgroundColor LightYellow
+  BorderColor DarkSlateGray
+  FontSize 13
+}
+
+actor "Conseiller Bancaire" as Advisor
+
+rectangle GestionBancaire {
+  Advisor -- (Créer un compte)
+  Advisor -- (Consulter un compte)
+  Advisor -- (Effectuer un dépôt)
+  Advisor -- (Effectuer un retrait)
+  Advisor -- (Effectuer un virement)
+  Advisor -- (Consulter l'historique des opérations)
+  Advisor -- (Modifier le plafond d'un compte)
+}
+
+note right of (Consulter un compte)
+  **Inclut** : Afficher le solde et les informations du titulaire
+end note
+
+note right of (Effectuer un virement)
+  **Précondition** : Les deux comptes doivent exister.
+  **Postcondition** : Les soldes sont mis à jour.
+end note
+
+note right of (Effectuer un retrait)
+  **Exception** : Solde insuffisant ou plafond dépassé.
+end note
+
+note right of (Modifier le plafond d'un compte)
+  **Bonus** : Uniquement pour les comptes avec plafond.
+end note
+@enduml

@@ -1,6 +1,4 @@
 @startuml
-' Configuration pour une meilleure lisibilité
-skinparam classAttributeIconSize 0
 left to right direction
 
 ' Classes principales
