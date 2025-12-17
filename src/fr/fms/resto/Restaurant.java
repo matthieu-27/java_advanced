@@ -132,7 +132,7 @@ public class Restaurant {
 	
 	public static boolean isWanted(Item item) {
 		// Check if item contains selection
-		if(item.getName().equals("AUCUNE")) {
+		if(item.getName().equals("AUCUNE") || item.getName().equals("AUCUN")) {
 			return false;
 		}
 		return true;

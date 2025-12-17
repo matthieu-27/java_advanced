@@ -1,15 +1,8 @@
 ****** Commande numéro 1 ******
-SALADE
-POULET
-PATES
+
+BOEUF
+AUCUN
 TARTE MAISON
-EAU PLATE
-Total: 27,00 €
-****** Commande numéro 2 ******
-SALADE
-POULET
-PATES
-TIRAMISU
-EAU PLATE
-Total: 27,50 €
-Le montant total des commandes est de 54.5€
+
+Total: 20,00 €
+Le montant total de la commande est de 20.0€
