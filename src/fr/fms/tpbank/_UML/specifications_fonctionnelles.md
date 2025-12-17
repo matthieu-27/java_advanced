@@ -1,29 +1,21 @@
-# Application Banque
+# Spécifications fonctionnelles
 
-## Application : Gestion d'une banque
-
-----
-
-### Description Générale de BankApp
-
-#### L’application BankApp permet de :
+## But de l'application
+   
+### L'application BankApp est un outil de gestion bancaire en console conçu pour les conseillers bancaires et les administrateurs système. Elle permet de :
 
 ---
 
-### Pour les utilisateurs connectés (conseillers bancaires) :
-Effectuer des opérations bancaires :
+#### - Gérer les comptes bancaires (création, consultation, suppression).
+#### - Effectuer des opérations financières (dépôts, retraits, virements).
+#### - Consulter l'historique des transactions.
+#### - Configurer des plafonds pour les comptes spécifiques.
+#### - Assurer la persistance des données via une base de données MariaDB.
 
-- Dépôts et retraits sur les comptes.
-- Virements entre comptes (avec validation des soldes et des plafonds).
 
-- Consulter l’historique des transactions pour un compte spécifique (date, type d’opération, montant).
-- Ajouter des comptes au "suivi" (équivalent d’un "caddy" pour les produits) pour un traitement ultérieur (ex : préparation de rapports ou de virements groupés).
-- Visualiser et modifier les informations des comptes (ex : mettre à jour le titulaire ou le type de compte).
+## Public cible :
 
-### Pour les administrateurs du système :
-En plus des fonctionnalités disponibles pour les conseillers bancaires, l’application permet de :
+- ### Conseillers bancaires : Utilisateurs quotidiens pour les opérations clients.
+- ### Administrateurs système : Utilisateurs techniques pour la gestion complète du système.
 
-Gérer les comptes bancaires :
-- Ajouter, supprimer ou modifier les informations des comptes (ex : numéro de compte, titulaire, solde, plafond).
-- Activer/désactiver des comptes (ex : bloquer un compte en cas de fraude).
 
