@@ -1,18 +1,15 @@
 ****** Commande numéro 1 ******
-QUICHE
-VEGETARIEN
-FRITES
-TIRAMISU
-VIN
+SALADE
+POULET
+PATES
+TARTE MAISON
+EAU PLATE
+Total: 27,00 €
 ****** Commande numéro 2 ******
-AUCUNE
-POISSON
-AUCUN
-MOUSSE AU CHOCOLAT
+SALADE
+POULET
+PATES
+TIRAMISU
 EAU PLATE
-****** Commande numéro 3 ******
-QUICHE
-POISSON
-LEGUMES
-MOUSSE AU CHOCOLAT
-EAU PLATE
+Total: 27,50 €
+Le montant total des commandes est de 54.5€

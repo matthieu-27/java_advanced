@@ -1,2 +1,0 @@
-Menu 1:
-Récapitulatif de la commande : {boisson=EAU PLATE, dessert=MOUSSE AU CHOCOLAT, plat=POISSON, entrée=AUCUNE, accompagnement=AUCUN}

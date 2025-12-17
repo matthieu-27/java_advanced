@@ -1,18 +1,8 @@
 ****** Commande numéro 1 ******
-QUICHE
-VEGETARIEN
-FRITES
-TIRAMISU
-VIN
-****** Commande numéro 2 ******
-AUCUNE
-POISSON
-AUCUN
-MOUSSE AU CHOCOLAT
+SALADE
+POULET
+RIZ
+TARTE MAISON
 EAU PLATE
-****** Commande numéro 3 ******
-QUICHE
-POISSON
-LEGUMES
-MOUSSE AU CHOCOLAT
-EAU PLATE
+Total: 26,50 €
+Le montant total de la commande est de 26.5€
