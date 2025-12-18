@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 
 -- Listage de la structure de table tp_bank. bank
 CREATE TABLE IF NOT EXISTS `bank` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `bank` (
 
 -- Listage de la structure de table tp_bank. client
 CREATE TABLE IF NOT EXISTS `client` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `address` text NOT NULL,
   PRIMARY KEY (`id`)
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 -- Listage de la structure de table tp_bank. client_accounts
 CREATE TABLE IF NOT EXISTS `client_accounts` (
   `client_id` int(11) NOT NULL,
-  `account_number` varchar(50) NOT NULL,
+  `account_number` varchar(50) NOT NULL UNIQUE,
   PRIMARY KEY (`client_id`,`account_number`),
   KEY `account_number` (`account_number`),
   CONSTRAINT `1` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`),
@@ -64,8 +64,8 @@ CREATE TABLE IF NOT EXISTS `client_accounts` (
 
 -- Listage de la structure de table tp_bank. limited_account
 CREATE TABLE IF NOT EXISTS `limited_account` (
-  `id` varchar(50) NOT NULL,
-  `maximit` decimal(14,2) NOT NULL,
+  `id` varchar(50) NOT NULL AUTO_INCREMENT,
+  `max_limit` decimal(14,2) NOT NULL,
   `account_number` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `account_number` (`account_number`),
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `limited_account` (
 
 -- Listage de la structure de table tp_bank. transaction
 CREATE TABLE IF NOT EXISTS `transaction` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `datetime` datetime NOT NULL,
   `amount` decimal(14,2) NOT NULL,
   `source_account` varchar(50) NOT NULL,
