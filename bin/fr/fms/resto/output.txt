@@ -1,8 +1,0 @@
-****** Commande numéro 1 ******
-
-BOEUF
-RIZ
-
-EAU GAZEUSE
-Total: 19,50 €
-Le montant total de la commande est de 19.5€
